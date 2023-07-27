@@ -1,0 +1,29 @@
+create user=> No Auth
+Test-Yes
+
+Login
+No Auth
+Test-Yes
+
+Logout
+inherit from parent
+Test-Yes
+
+LogoutAll
+inherit from parent
+Test-Yes
+
+Create Task:
+inherit from parent
+
+Read Profile
+inherit from parent
+
+
+{
+   "email":"poonamchauhan229@gmail.com",
+    "password":"1234567"
+}
+
+
+

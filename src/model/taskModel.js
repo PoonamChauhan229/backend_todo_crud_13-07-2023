@@ -11,6 +11,11 @@ const taskSchema=new mongoose.Schema({
     status:{
         type:String,
         default:"Pending"
+    },
+    owner:{
+        type:mongoose.Schema.Types.ObjectId,
+        required:true,
+        ref:'User'//MOdel Name
     }
 })
 const Task=mongoose.model("Task",taskSchema)
