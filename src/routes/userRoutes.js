@@ -21,7 +21,7 @@ router.post('/users/login',async (req,res)=>{
 
 //signup route
 // Creating an User Route
-router.post('/users',async (req,res)=>{
+router.post('/users/signup',async (req,res)=>{
     console.log(req.body)
     // creating an user
     const userData=new User(req.body)
