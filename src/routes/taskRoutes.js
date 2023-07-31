@@ -74,12 +74,12 @@ router.get('/task/:id',auth,async (req,res)=>{
   router.put('/task/:id',auth,async (req,res)=>{
     // if any key value passed which doesnt exit, mongoose ignore so we have to fix it
     const updates=Object.keys(req.body)
-    const allowedUpdates=['taskName','status','description']
-    const isValidOperations=updates.every((element)=>allowedUpdates.includes(element))
-    console.log(isValidOperations)
-    if(!isValidOperations){
-        return res.status(400).send({message:"Invalid Updates!"})
-    }
+    // const allowedUpdates=['taskName','status','description']
+    // const isValidOperations=updates.every((element)=>allowedUpdates.includes(element))
+    // console.log(isValidOperations)
+    // if(isValidOperations){
+    //     return res.status(400).send({message:"Invalid Updates!"})
+    // }
     try{
         const updateTask=await Task.findOne({_id:req.params.id,owner:req.user._id})
         if(!updateTask){
@@ -93,4 +93,7 @@ router.get('/task/:id',auth,async (req,res)=>{
         res.status(500).send(e)
     }
     })
+
+
+
   module.exports = router;
