@@ -8,7 +8,14 @@ const app=express()
 const PORT=process.env.PORT;
 const connection=require('./db/connection')
 connection()
-app.use(cors())
+
+app.use(cors({
+    origin: 'http://localhost:5000',
+    methods: ["POST", "GET"],
+    credentials: true
+}))
+
+
 app.use(express.json())
 app.use(cookieParser())
 const taskRouter=require('./routes/taskRoutes')
