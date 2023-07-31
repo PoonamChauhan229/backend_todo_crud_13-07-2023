@@ -18,7 +18,8 @@ const auth=async(req,res,next)=>{
 
 try{
     //access the incoming header
-    const token=req.header('Authorization').replace("Bearer ","")
+    // const token=req.header('Authorization').replace("Bearer ","")
+    const token=req.header('token').replace("Bearer ","")
     console.log(token)
     
     //verify the token that the token is valid or not

@@ -74,8 +74,9 @@ router.get('/task/:id',auth,async (req,res)=>{
   router.put('/task/:id',auth,async (req,res)=>{
     // if any key value passed which doesnt exit, mongoose ignore so we have to fix it
     const updates=Object.keys(req.body)
-    const allowedUpdates=['taskName','description','status']
+    const allowedUpdates=['taskName','status','description']
     const isValidOperations=updates.every((element)=>allowedUpdates.includes(element))
+    console.log(isValidOperations)
     if(!isValidOperations){
         return res.status(400).send({message:"Invalid Updates!"})
     }

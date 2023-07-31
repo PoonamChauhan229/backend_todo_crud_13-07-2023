@@ -10,8 +10,8 @@ const connection=require('./db/connection')
 connection()
 
 app.use(cors({
-    origin: 'http://localhost:5000',
-    methods: ["POST", "GET"],
+    // origin: 'http://localhost:5000',
+    // methods: ["POST", "GET"],
     credentials: true
 }))
 
